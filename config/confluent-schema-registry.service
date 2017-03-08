@@ -1,0 +1,16 @@
+[Unit]
+Description = Confluent Connect: Schema Registry
+Documentation = http://www.confluent.io
+After = network.target remote-fs.target nss-lookup.target zookeeper.service kafka.service
+
+[Service]
+SyslogIdentifier = confluent-schema-registry
+User = confluent
+Type = simple
+ExecStart = /usr/bin/schema-registry-start /etc/schema-registry/schema-registry.properties
+Restart = on-failure
+RestartSec = 10
+ExecStop = /usr/bin/schema-registry-stop
+
+[Install]
+WantedBy = multi-user.target confluent-connect-distributed.service

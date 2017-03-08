@@ -1,0 +1,14 @@
+[Unit]
+Description = Confluent Kafka 2.11
+Documentation = http://www.confluent.io
+After = network.target remote-fs.target nss-lookup.target zookeeper.service
+
+[Service]
+SyslogIdentifier = confluent-kafka
+User = confluent
+Type = simple
+ExecStart = /usr/bin/kafka-server-start /etc/kafka/server.properties
+ExecStop = /usr/bin/kafka-server-stop
+
+[Install]
+WantedBy = multi-user.target confluent-schema-registry.service confluent-rest.service

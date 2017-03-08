@@ -1,0 +1,14 @@
+[Unit]
+Description = Confluent REST API
+Documentation = http://www.confluent.io
+After = network.target remote-fs.target nss-lookup.target zookeeper.service kafka.service
+
+[Service]
+SyslogIdentifier = confluent-rest
+User = confluent
+Type = simple
+ExecStart = /usr/bin/kafka-rest-start -daemon
+ExecStop = /usr/bin/kafka-rest-stop
+
+[Install]
+WantedBy = multi-user.target
