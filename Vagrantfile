@@ -4,7 +4,7 @@
 # Global
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "bento/centos-7.3"
+  config.vm.box = "bento/centos-7.4"
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
   config.vm.provider "virtualbox" do |v|
