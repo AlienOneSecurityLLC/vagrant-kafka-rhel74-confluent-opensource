@@ -21,13 +21,13 @@ echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 # ORACLE JAVA JDK 8 INSTALL
 ###########################
 
-JDK_VERSION="jdk-8u112-linux-x64"
+JDK_VERSION="jdk-8u162-linux-x64"
 JDK_RPM="$JDK_VERSION.rpm"
 
 if [ ! -f /tmp/$JDK_RPM ]; then
     echo Downloading $JDK_RPM
     wget –quiet -O /tmp/$JDK_RPM --no-check-certificate --no-cookies --header \
-    "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u112-b15/$JDK_RPM"
+    "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u162-b12/$JDK_RPM"
 fi
 
 echo "Disabling firewalld & selinux..."
