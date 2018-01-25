@@ -6,14 +6,14 @@
 ### Vagrant Kafka/Zookeeper 
 =============
 #### Vagrant Configuration: 5 VMs Total 
-    + CentOS 7.3 VMs
+    + CentOS 7.4 VMs
     + Three Apache Zookeeper Quorum (Replicated ZooKeeper)
     + Three Confluent Kafka Brokers 
-    + JDK 8u112
+    + JDK 8u162
     + Kafka 0.10.1.1-1
     + Scala 2.11
-    + Zookeeper 3.4.9 
-    + One Logstash 5.2.1 Node 
+    + Zookeeper 3.4.11 
+    + One Logstash 6.1.2 Node 
     + One ArcSight Smart Connector 7.3.0.7886.0 Node 
 
 ##### Prerequisites - Install the following prerequisites 
@@ -35,7 +35,7 @@ vagrant plugin install vagrant-hostmanager
 ```
 git clone https://github.com/AlienOneSecurityLLC/SnowBlossom.git
 git pull
-cd SnowBlossom/vagrant-confluent-rhel-73
+cd SnowBlossom/vagrant-confluent-rhel-74
 for i in $(vagrant global-status|grep virtualbox|awk '{ print $1 }');do vagrant destroy $i;done
 rm -rf .vagrant 
 vagrant up --provider virtualbox
