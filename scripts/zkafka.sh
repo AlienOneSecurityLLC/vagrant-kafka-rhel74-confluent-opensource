@@ -44,7 +44,7 @@ rpm -ivh /tmp/$JDK_RPM
 echo "Completed installation JDK Version: $JDK_VERSION"
 
 ########################
-# IINSTALL EPEL
+# INSTALL EPEL
 ########################
 
 rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
